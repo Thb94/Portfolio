@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Certifications de Mohamed Elnaggar en cybersécurité.">
+    <title>Certifications - COGNET Thibault</title>
+    <style>
+        :root {
+            --background: #121212;
+            --text-primary: #FFFFFF;
+            --accent-blue: #0D6EFD;
+            --accent-green: #00FF87;
+            --card-bg: #1F1F1F;
+            --card-hover: #292929;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 0;
+        }
+
+        header ul li a {
+            font-weight: bold;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        header ul li a:hover {
+            color: var(--accent-green);
+        }
+
+        main {
+            flex: 1;
+            padding-top: 80px;
+            /* To avoid content being hidden behind the fixed header */
+        }
+
+        footer {
+            background-color: var(--card-bg);
+            padding: 10px;
+            color: #888;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--text-primary);
+        }
+
+        .certifications {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .certifications h1 {
+            font-size: 2rem;
+            color: var(--accent-green);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .certification-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .certification-box {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            /* Make the box square */
+        }
+
+        .certification-box:hover {
+            transform: translateY(-3px);
+        }
+
+        .certification-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .certification-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .certification-box .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .certification-box:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay p {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">Profil</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="stages.html">Stages</a></li>
+                <li><a href="projet.html">Projets</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="Veille.html">Veille</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="certifications">
+        <h1 class="title">📜 Mes certifications</h1>
+      
+        <!-- Grille de sélection -->
+        <div class="grid-selection" id="certGrid">
+          <div class="grid-container">
+            <div class="cert-card" onclick="showCert('cert1')">Certification 1</div>
+            <div class="cert-card" onclick="showCert('cert2')">Certification 2</div>
+            <div class="cert-card" onclick="showCert('cert3')">Certification 3</div>
+            <div class="cert-card" onclick="showCert('cert4')">Certification 4</div>
+          </div>
+        </div>
+      
+        <!-- CERTIFICATION 1 -->
+        <div id="cert1" class="cert-details" style="display: none;">
+          <div class="experience">
+            <h3>🖥️ NDG Linux Unhatched</h3>
+            <p><strong>Date d'obtention :</strong> 8 février 2024</p>
+            <ul>
+              <li>Introduction à l’environnement Linux.</li>
+              <li>Commandes de base, structure du système de fichiers, permissions.</li>
+              <li>Parcours proposé par Cisco Networking Academy.</li>
+            </ul>
+            <p>📄 <a href="assets/images/Partner-_NDG_Linux_Unhatched_certificate_thibault-cognet-92-gmail-com_848b9482-93f6-453e-8027-5e0aed47578a.pdf" target="_blank">Voir le certificat</a></p>
+            <p style="text-align:right;"><a href="#" onclick="backToCerts()">Merci d'avoir lu 😉</a></p>
+          </div>
+        </div>
+      
+        <!-- CERTIFICATION 2 -->
+        <div id="cert2" class="cert-details" style="display: none;">
+          <div class="experience">
+            <h3>🌐 Networking Essentials</h3>
+            <p><strong>Date d'obtention :</strong> 8 février 2024</p>
+            <ul>
+              <li>Bases des réseaux : IP, topologies, modèles OSI/TCP-IP.</li>
+              <li>Installation, configuration de petits réseaux, dépannage.</li>
+              <li>Formation Cisco Networking Academy.</li>
+            </ul>
+            <p>📄 <a href="assets/images/Networking_Essentials_certificate_thibault-cognet-92-gmail-com_f194189c-3f5a-4195-841b-068143f68178.pdf" target="_blank">Voir le certificat</a></p>
+            <p style="text-align:right;"><a href="#" onclick="backToCerts()">Merci d'avoir lu 😉</a></p>
+          </div>
+        </div>
+      
+        <!-- CERTIFICATION 3 -->
+        <div id="cert3" class="cert-details" style="display: none;">
+          <div class="experience">
+            <h3>🔐 Introduction to Cybersecurity</h3>
+            <p><strong>Date d'obtention :</strong> 8 février 2024</p>
+            <ul>
+              <li>Notions fondamentales de cybersécurité.</li>
+              <li>Types de menaces, bonnes pratiques, enjeux globaux.</li>
+              <li>Programme Cisco Networking Academy.</li>
+            </ul>
+            <p>📄 <a href="assets/images/Introduction_to_Cybersecurity_certificate_thibault-cognet-92-gmail-com_c0156bf4-c535-4a36-b15e-970c2953cbc3.pdf" target="_blank">Voir le certificat</a></p>
+            <p style="text-align:right;"><a href="#" onclick="backToCerts()">Merci d'avoir lu 😉</a></p>
+          </div>
+        </div>
+      
+        <!-- CERTIFICATION 4 -->
+        <div id="cert4" class="cert-details" style="display: none;">
+          <div class="experience">
+            <h3>📡 CCNAv7 : Introduction to Networks</h3>
+            <p><strong>Date d'obtention :</strong> 23 avril 2024</p>
+            <ul>
+              <li>Concepts clés des réseaux, OSI, IP, sous-réseaux, routage.</li>
+              <li>Configuration de routeurs, commutateurs Cisco.</li>
+              <li>Cours officiel Cisco Networking Academy.</li>
+            </ul>
+            <p>📄 <a href="assets/images/CCNA-_Introduction_to_Networks_certificate_thibault-cognet-92-gmail-com_7808d7ba-3992-48b5-b59e-5e6c923ed025.pdf" target="_blank">Voir le certificat</a></p>
+            <p style="text-align:right;"><a href="#" onclick="backToCerts()">Merci d'avoir lu 😉</a></p>
+          </div>
+        </div>
+      </section>
+      
+      <script>
+        function showCert(id) {
+          document.getElementById("certGrid").style.display = "none";
+          document.querySelectorAll('.cert-details').forEach(cert => {
+            cert.style.display = 'none';
+          });
+          document.getElementById(id).style.display = 'block';
+        }
+      
+        function backToCerts() {
+          document.querySelectorAll('.cert-details').forEach(cert => {
+            cert.style.display = 'none';
+          });
+          document.getElementById("certGrid").style.display = "flex";
+        }
+      </script>
+      
+      <style>
+        .grid-selection {
+          display: flex;
+          justify-content: center;
+        }
+      
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+          max-width: 900px;
+        }
+      
+        .cert-card {
+          background-color: #1e1e1e;
+          border: 2px solid #3d8bfd;
+          width: 150px;
+          height: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          font-size: 1.2rem;
+          color: white;
+          font-weight: bold;
+          border-radius: 15px;
+          transition: transform 0.2s ease, background-color 0.3s ease;
+          cursor: pointer;
+        }
+      
+        .cert-card:hover {
+          background-color: #00ff88;
+          color: black;
+          transform: scale(1.05);
+        }
+      
+        .cert-details {
+          max-width: 900px;
+          margin: 40px auto;
+          color: white;
+        }
+      
+        .experience ul {
+          padding-left: 20px;
+        }
+      
+        .title {
+          text-align: center;
+          margin-top: 100px;
+          color: #00ff88;
+        }
+      </style>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 COGNET Thibault. Tous droits réservés.</p>
+</footer>
+<script src="assets/js/gsap.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+      
+
+    
